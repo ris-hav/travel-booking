@@ -8,7 +8,6 @@ import {
   MenuItem,
   Grid,
   Box,
-  Paper,
   Tabs,
   Tab,
   Divider,
@@ -20,6 +19,8 @@ import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
 import AirlineSeatLegroomExtraIcon from "@mui/icons-material/AirlineSeatLegroomExtra";
 import AirlineSeatLegroomReducedIcon from "@mui/icons-material/AirlineSeatLegroomReduced";
 import AirlineSeatIndividualSuiteIcon from "@mui/icons-material/AirlineSeatIndividualSuite";
+import CreditCardIcon from "@mui/icons-material/CreditCard";
+
 import AddIcon from "@mui/icons-material/Add";
 import Location from "./Location";
 import FlightFilter from "./FlightFilter";
@@ -71,6 +72,7 @@ const TravelBooking = () => {
               </TextField>
             </Grid>
             <Grid item xs={12} md={3}>
+              <Grid item xs={12} md={3}></Grid>
               <TextField
                 fullWidth
                 select
@@ -90,6 +92,28 @@ const TravelBooking = () => {
                   Business
                 </MenuItem>
               </TextField>
+            </Grid>
+            <Grid
+              item
+              xs={12}
+              md={2}
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              <Button
+                color="primary"
+                startIcon={<CreditCardIcon />}
+                sx={{
+                  textTransform: "none",
+                  fontWeight: "bold",
+                  color: "green",
+                }}
+              >
+                Add Another Route
+              </Button>
             </Grid>
           </Grid>
           <Location />

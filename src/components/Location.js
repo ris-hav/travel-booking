@@ -4,7 +4,7 @@ import SwapHorizIcon from "@mui/icons-material/SwapHoriz";
 
 const Location = () => {
   return (
-    <Grid container spacing={2} mt={1} sx={{ width: "90%" }}>
+    <Grid container spacing={2} mt={1} sx={{ width: "100%" }}>
       <Grid item xs={12} md={3}>
         <TextField
           fullWidth
