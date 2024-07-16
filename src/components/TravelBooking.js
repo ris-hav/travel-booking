@@ -109,7 +109,7 @@ const TravelBooking = () => {
                 sx={{
                   textTransform: "none",
                   fontWeight: "bold",
-                  color: "green",
+                  color: "#19c38b",
                 }}
               >
                 Add Loyalty Cards
