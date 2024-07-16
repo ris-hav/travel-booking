@@ -10,20 +10,17 @@ import {
   Avatar,
 } from "@mui/material";
 
-import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import {
+  HelpOutline as HelpOutlineIcon,
+  ExpandMore as ExpandMoreIcon,
+} from "@mui/icons-material";
 
+// const url =
+// ("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoCFjVfj2rdsk2thEHos20C5dGHEShHMEVdM-b5pzfYJd9tO_iTkh4OyW4AqVKFxh4RZs&usqp=CAU");
+
+const url =
+  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4WKZ74XkYlonM5VO5njVdvPp69D-9ye3MPA&s";
 const Header = () => {
-  const [languageElAccount, setLanguageElAccount] = React.useState(null);
-
-  const handleMenu = (setter) => (event) => {
-    setter(event.currentTarget);
-  };
-
-  const handleClose = (setter) => () => {
-    setter(null);
-  };
-
   return (
     <AppBar
       position="static"
@@ -31,15 +28,15 @@ const Header = () => {
       sx={{ width: "100%", backgroundColor: "white", boxShadow: "none" }}
     >
       <Toolbar>
-        <Box sx={{ border: "1px dashed grey", height: "40px", width: "160px" }}>
+        <Box sx={{ height: "40px", width: "160px" }}>
           <img
-            src="../logo.jpeg"
+            src={url}
             alt="Appnox"
             style={{
               height: "40px",
-              widhth: "50px",
+              width: "100%",
               background: "none",
-              //   objectFit: "contain",
+              objectFit: "cover",
             }}
           />
         </Box>
@@ -78,22 +75,9 @@ const Header = () => {
         >
           JG
         </Avatar>
-        <Button
-          color="inherit"
-          onClick={handleMenu(setLanguageElAccount)}
-          endIcon={<ExpandMoreIcon />}
-        >
+        <Button color="inherit" endIcon={<ExpandMoreIcon />}>
           EN
         </Button>
-        <Menu
-          languageEl={languageElAccount}
-          open={Boolean(languageElAccount)}
-          onClose={handleClose(setLanguageElAccount)}
-        >
-          <MenuItem onClick={handleClose(setLanguageElAccount)}>EN</MenuItem>
-          <MenuItem onClick={handleClose(setLanguageElAccount)}>FR</MenuItem>
-          <MenuItem onClick={handleClose(setLanguageElAccount)}>DE</MenuItem>
-        </Menu>
       </Toolbar>
     </AppBar>
   );
