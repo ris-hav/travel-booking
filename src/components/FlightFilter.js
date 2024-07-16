@@ -30,8 +30,8 @@ function Filters({ label, icon, start }) {
       startIcon={start ? icon : null}
       endIcon={!start ? icon : null}
       sx={{
-        borderRadius: "20px", // Adjust the border radius as needed
-        minWidth: "120px", // Adjust the width as needed
+        borderRadius: "20px",
+        minWidth: "120px",
         color: "#45484a",
         border: "1px solid #ddd",
       }}

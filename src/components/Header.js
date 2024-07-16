@@ -9,12 +9,12 @@ import {
   MenuItem,
   Avatar,
 } from "@mui/material";
-import AccountCircle from "@mui/icons-material/AccountCircle";
+
 import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 const Header = () => {
-  const [anchorElAccount, setAnchorElAccount] = React.useState(null);
+  const [languageElAccount, setLanguageElAccount] = React.useState(null);
 
   const handleMenu = (setter) => (event) => {
     setter(event.currentTarget);
@@ -80,19 +80,19 @@ const Header = () => {
         </Avatar>
         <Button
           color="inherit"
-          onClick={handleMenu(setAnchorElAccount)}
+          onClick={handleMenu(setLanguageElAccount)}
           endIcon={<ExpandMoreIcon />}
         >
           EN
         </Button>
         <Menu
-          anchorEl={anchorElAccount}
-          open={Boolean(anchorElAccount)}
-          onClose={handleClose(setAnchorElAccount)}
+          languageEl={languageElAccount}
+          open={Boolean(languageElAccount)}
+          onClose={handleClose(setLanguageElAccount)}
         >
-          <MenuItem onClick={handleClose(setAnchorElAccount)}>EN</MenuItem>
-          <MenuItem onClick={handleClose(setAnchorElAccount)}>FR</MenuItem>
-          <MenuItem onClick={handleClose(setAnchorElAccount)}>DE</MenuItem>
+          <MenuItem onClick={handleClose(setLanguageElAccount)}>EN</MenuItem>
+          <MenuItem onClick={handleClose(setLanguageElAccount)}>FR</MenuItem>
+          <MenuItem onClick={handleClose(setLanguageElAccount)}>DE</MenuItem>
         </Menu>
       </Toolbar>
     </AppBar>

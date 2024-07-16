@@ -1,4 +1,5 @@
 import React from "react";
+
 import {
   Container,
   Typography,
@@ -12,6 +13,7 @@ import {
   Tab,
   Divider,
 } from "@mui/material";
+
 import SearchIcon from "@mui/icons-material/Search";
 import PeopleIcon from "@mui/icons-material/People";
 import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
@@ -26,10 +28,10 @@ import List from "./List";
 const TravelBooking = () => {
   const [value, setValue] = React.useState(0);
   const [value2, setValue2] = React.useState(0);
-  const handleChange = (event, newValue) => {
+  const handleChange = (_, newValue) => {
     setValue(newValue);
   };
-  const handleChange2 = (event, newValue) => {
+  const handleChange2 = (_, newValue) => {
     setValue2(newValue);
   };
   return (

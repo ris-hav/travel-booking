@@ -1,17 +1,11 @@
 import React from "react";
 import { Container, Box } from "@mui/material";
-
 import HistoryIcon from "@mui/icons-material/History";
 import Header from "./Header";
 import BookingSelection from "./BookingSelection";
 import TravelBooking from "./TravelBooking";
 
 function App() {
-  const [value, setValue] = React.useState(0);
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
-
   return (
     <>
       <Container maxWidth={false} sx={{ padding: " 0px !important" }}>
