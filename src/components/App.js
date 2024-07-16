@@ -1,47 +1,45 @@
 import React from "react";
 import { Container, Box } from "@mui/material";
 import HistoryIcon from "@mui/icons-material/History";
+import styled from "styled-components";
+
 import Header from "./Header";
 import BookingSelection from "./BookingSelection";
 import TravelBooking from "./TravelBooking";
 
+const StyledHistoryIcon = styled(HistoryIcon)`
+  background-color: white;
+  color: #4b4b4b;
+  border: 1px solid #ddd;
+  padding: 4px;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  cursor: pointer;
+`;
+
+const ContentBox = styled(Box)`
+  display: flex;
+  margin-top: 20px;
+`;
+
+const DisplayBox = styled(Box)`
+  flex-grow: 1;
+  padding: 0;
+  margin: 15px;
+  margin-top: 0;
+`;
+
 function App() {
   return (
     <>
-      <Container maxWidth={false} sx={{ padding: " 0px !important" }}>
-        <Header />
-      </Container>
-      <Box
-        sx={{
-          display: "flex",
-          marginTop: "20px",
-        }}
-      >
+      <Header />
+      <ContentBox>
         <BookingSelection />
-        <Box
-          sx={{
-            flexGrow: 1,
-            p: 3,
-            padding: 0,
-            margin: "15px",
-            marginTop: 0,
-          }}
-        >
-          <HistoryIcon
-            sx={{
-              backgroundColor: "white",
-              color: "#4b4b4b",
-              border: "1px solid #ddd",
-              padding: "4px",
-              borderRadius: "5px",
-              marginBottom: "5px",
-              cursor: "pointer",
-            }}
-          />
-
+        <DisplayBox>
+          <StyledHistoryIcon />
           <TravelBooking />
-        </Box>
-      </Box>
+        </DisplayBox>
+      </ContentBox>
     </>
   );
 }

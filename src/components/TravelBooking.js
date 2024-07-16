@@ -1,28 +1,11 @@
 import React from "react";
 
-import {
-  Container,
-  Typography,
-  TextField,
-  Button,
-  MenuItem,
-  Grid,
-  Box,
-  Tabs,
-  Tab,
-  Divider,
-} from "@mui/material";
+import { Container, Typography, Box } from "@mui/material";
 
-import SearchIcon from "@mui/icons-material/Search";
-import PeopleIcon from "@mui/icons-material/People";
-import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
-import AirlineSeatLegroomExtraIcon from "@mui/icons-material/AirlineSeatLegroomExtra";
-import AirlineSeatLegroomReducedIcon from "@mui/icons-material/AirlineSeatLegroomReduced";
-import AirlineSeatIndividualSuiteIcon from "@mui/icons-material/AirlineSeatIndividualSuite";
-import CreditCardIcon from "@mui/icons-material/CreditCard";
-
-import AddIcon from "@mui/icons-material/Add";
+import Categories from "./Categories";
+import Preference from "./Preference";
 import Location from "./Location";
+import Buttons from "./Buttons";
 import FlightFilter from "./FlightFilter";
 import List from "./List";
 
@@ -42,126 +25,22 @@ const TravelBooking = () => {
           Travel Booking Portal
         </Typography>
 
-        <Tabs
+        <Categories
           value={value}
           onChange={handleChange}
-          aria-label="basic tabs example"
-        >
-          <Tab label="Buses" />
-          <Tab label="Trains" />
-          <Tab label="Flights" />
-        </Tabs>
-        <Divider sx={{ my: 4, margin: 0 }} />
+          noOfTabs={["Buses", "Trains", "Flights"]}
+        />
         <Box mt={3}>
-          <Grid container spacing={2}>
-            <Grid item xs={12} md={3}>
-              <TextField
-                fullWidth
-                select
-                label="Passengers"
-                defaultValue="1 Adult, 1 Child"
-              >
-                <MenuItem value="1 Adult, 1 Child">
-                  <PeopleIcon sx={{ marginRight: 1 }} />{" "}
-                  <span>1 Adult, 1 Child</span>
-                </MenuItem>
-                <MenuItem value="2 Adults">
-                  <PeopleAltIcon sx={{ marginRight: 1 }} />{" "}
-                  <span>2 Adults</span>
-                </MenuItem>
-              </TextField>
-            </Grid>
-            <Grid item xs={12} md={3}>
-              <Grid item xs={12} md={3}></Grid>
-              <TextField
-                fullWidth
-                select
-                label="Travel Class"
-                defaultValue="Premium Economy"
-              >
-                <MenuItem value="Premium Economy">
-                  <AirlineSeatLegroomExtraIcon sx={{ marginRight: 1 }} />{" "}
-                  Premium Economy
-                </MenuItem>
-                <MenuItem value="Economy">
-                  <AirlineSeatLegroomReducedIcon sx={{ marginRight: 1 }} />
-                  Economy
-                </MenuItem>
-                <MenuItem value="Business">
-                  <AirlineSeatIndividualSuiteIcon sx={{ marginRight: 1 }} />
-                  Business
-                </MenuItem>
-              </TextField>
-            </Grid>
-            <Grid
-              item
-              xs={12}
-              md={2}
-              sx={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-            >
-              <Button
-                color="primary"
-                startIcon={<CreditCardIcon />}
-                sx={{
-                  textTransform: "none",
-                  fontWeight: "bold",
-                  color: "#19c38b",
-                }}
-              >
-                Add Loyalty Cards
-              </Button>
-            </Grid>
-          </Grid>
+          <Preference />
           <Location />
           <Location />
-          <Box mt={2} sx={{ display: "flex", justifyContent: "space-between" }}>
-            <Button
-              color="primary"
-              startIcon={<AddIcon />}
-              sx={{ textTransform: "none", fontWeight: "bold" }}
-            >
-              Add Another Route
-            </Button>
-            <Box>
-              <Button
-                variant="outlined"
-                color="secondary"
-                sx={{
-                  marginRight: 2,
-                  borderColor: "#ddd",
-                  color: "#6a6d6e",
-                  backgroundColor: "#eee",
-                  textTransform: "none",
-                }}
-              >
-                Clear All
-              </Button>
-              <Button
-                variant="contained"
-                color="primary"
-                startIcon={<SearchIcon />}
-                sx={{ textTransform: "none" }}
-              >
-                Search
-              </Button>
-            </Box>
-          </Box>
+          <Buttons />
         </Box>
-
-        <Tabs
+        <Categories
           value={value2}
           onChange={handleChange2}
-          aria-label="basic tabs example"
-        >
-          <Tab label="Turin ➔ Rome" />
-          <Tab label="Rome ➔ Milan" />
-        </Tabs>
-        <Divider sx={{ my: 4, margin: 0 }} />
-
+          noOfTabs={["Turin ➔ Rome", "Rome ➔ Milan"]}
+        />
         <FlightFilter />
         <List />
       </Box>

@@ -1,13 +1,15 @@
 import React from "react";
-import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
-import Grid from "@mui/material/Grid";
-import FlightIcon from "@mui/icons-material/Flight";
-import HotelIcon from "@mui/icons-material/Hotel";
-import TrainIcon from "@mui/icons-material/Train";
-import BusIcon from "@mui/icons-material/DirectionsBus";
-import TimeToLeaveIcon from "@mui/icons-material/TimeToLeave";
-import ChatIcon from "@mui/icons-material/Chat";
+import { Grid, Box, Button } from "@mui/material";
+
+import {
+  Flight as FlightIcon,
+  Hotel as HotelIcon,
+  Train as TrainIcon,
+  DirectionsBus as BusIcon,
+  TimeToLeave as TimeToLeaveIcon,
+  Chat as ChatIcon,
+} from "@mui/icons-material";
+
 import styled from "styled-components";
 
 const StyledGrid = styled(Grid)`
@@ -21,18 +23,18 @@ const StyledButton = styled(Button)`
   padding-right: 0 !important;
 `;
 
+const StyledBox = styled(Box)`
+  background-color: white;
+  width: 4.5%;
+  height: 275px;
+  border: 1px solid #ddd;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+`;
+
 const BookingSelection = () => {
   return (
-    <Box
-      sx={{
-        backgroundColor: "white",
-        width: "4.5%",
-        height: "275px",
-        border: "1px solid #ddd",
-        borderTopRightRadius: "10px",
-        borderBottomRightRadius: "10px",
-      }}
-    >
+    <StyledBox>
       <Grid container spacing={2} sx={{ margin: 0, padding: 0, width: "100%" }}>
         <StyledGrid item xs={12}>
           <StyledButton startIcon={<FlightIcon />}></StyledButton>
@@ -53,7 +55,7 @@ const BookingSelection = () => {
           <StyledButton startIcon={<ChatIcon />}></StyledButton>
         </StyledGrid>
       </Grid>
-    </Box>
+    </StyledBox>
   );
 };
 

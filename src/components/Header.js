@@ -5,8 +5,6 @@ import {
   Button,
   Box,
   IconButton,
-  Menu,
-  MenuItem,
   Avatar,
 } from "@mui/material";
 
@@ -15,11 +13,21 @@ import {
   ExpandMore as ExpandMoreIcon,
 } from "@mui/icons-material";
 
-// const url =
-// ("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoCFjVfj2rdsk2thEHos20C5dGHEShHMEVdM-b5pzfYJd9tO_iTkh4OyW4AqVKFxh4RZs&usqp=CAU");
+import styled from "styled-components";
 
-const url =
+const StyledAvatar = styled(Avatar)`
+  background-color: #1976d2 !important;
+  width: 25px !important;
+  height: 25px !important;
+  font-size: 16px !important;
+  padding: 4px;
+  margin-left: 1px;
+  margin-right: 1px;
+`;
+
+const logo =
   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4WKZ74XkYlonM5VO5njVdvPp69D-9ye3MPA&s";
+
 const Header = () => {
   return (
     <AppBar
@@ -30,26 +38,31 @@ const Header = () => {
       <Toolbar>
         <Box sx={{ height: "40px", width: "160px" }}>
           <img
-            src={url}
+            src={logo}
             alt="Appnox"
             style={{
-              height: "40px",
+              height: "100%",
               width: "100%",
-              background: "none",
+              // background: "none",
               objectFit: "cover",
             }}
           />
         </Box>
-        <Box sx={{ display: "flex", flexGrow: 1, justifyContent: "center" }}>
+        <Box
+          sx={{
+            display: "flex",
+            flexGrow: 1,
+            gap: "20px",
+            justifyContent: "center",
+          }}
+        >
           <Button color="inherit">Home</Button>
           <Button color="inherit" endIcon={<ExpandMoreIcon />}>
             Travel
           </Button>
-
           <Button color="inherit" endIcon={<ExpandMoreIcon />}>
             Reports
           </Button>
-
           <Button color="inherit" endIcon={<ExpandMoreIcon />}>
             Help
           </Button>
@@ -60,21 +73,7 @@ const Header = () => {
         <IconButton size="large" color="inherit">
           <HelpOutlineIcon />
         </IconButton>
-
-        <Avatar
-          sx={{
-            bgcolor: "#1976d2",
-            width: 25,
-            height: 25,
-            fontSize: 16,
-            padding: 0.5,
-            color: "white",
-            marginLeft: 1,
-            marginRight: 1,
-          }}
-        >
-          JG
-        </Avatar>
+        <StyledAvatar>JG</StyledAvatar>
         <Button color="inherit" endIcon={<ExpandMoreIcon />}>
           EN
         </Button>

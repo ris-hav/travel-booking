@@ -1,23 +1,16 @@
 import { TextField, Grid, InputAdornment } from "@mui/material";
-import AddLocationAltIcon from "@mui/icons-material/AddLocationAlt";
-import SwapHorizIcon from "@mui/icons-material/SwapHoriz";
+import {
+  AddLocationAlt as AddLocationAltIcon,
+  SwapHoriz as SwapHorizIcon,
+} from "@mui/icons-material";
 
 const Location = () => {
   return (
     <Grid container spacing={2} mt={1} sx={{ width: "100%" }}>
-      <Grid item xs={12} md={3}>
-        <TextField
-          fullWidth
-          label=" Select Departure Location "
-          InputProps={{
-            endAdornment: (
-              <InputAdornment position="end">
-                <AddLocationAltIcon />
-              </InputAdornment>
-            ),
-          }}
-        />
-      </Grid>
+      <FlightDetails
+        label="Select Departure Location"
+        icon={<AddLocationAltIcon />}
+      />
       <Grid
         item
         xs={12}
@@ -25,41 +18,44 @@ const Location = () => {
         sx={{ display: "flex", alignItems: "center" }}
       >
         <SwapHorizIcon
-          sx={{ border: "1px solid #ddd", borderRadius: "5px", padding: "6px" }}
-        />
-      </Grid>
-
-      <Grid item xs={12} md={3}>
-        <TextField
-          fullWidth
-          label="Select Arrival Location"
-          InputProps={{
-            endAdornment: (
-              <InputAdornment position="end">
-                <AddLocationAltIcon />
-              </InputAdornment>
-            ),
+          sx={{
+            border: "1px solid #ddd",
+            borderRadius: "5px",
+            padding: "6px",
+            cursor: "pointer",
           }}
         />
       </Grid>
-      <Grid item xs={12} md={2}>
-        <TextField
-          fullWidth
-          label="Departure Date"
-          type="date"
-          InputLabelProps={{ shrink: true }}
-        />
-      </Grid>
-      <Grid item xs={12} md={2}>
-        <TextField
-          fullWidth
-          label="Departure Time"
-          type="time"
-          InputLabelProps={{ shrink: true }}
-        />
-      </Grid>
+      <FlightDetails
+        label="Select Arrival Location"
+        icon={<AddLocationAltIcon />}
+      />
+      <FlightDetails label="Departure Date" type="date" md={2} />
+      <FlightDetails label="Departure Time" type="time" md={2} />
     </Grid>
   );
 };
+
+function FlightDetails({ label, type = "text", icon = "", md = 3 }) {
+  return (
+    <Grid item xs={12} md={md}>
+      <TextField
+        fullWidth
+        label={label}
+        type={type}
+        InputProps={
+          icon
+            ? {
+                endAdornment: (
+                  <InputAdornment position="end">{icon}</InputAdornment>
+                ),
+              }
+            : null
+        }
+        InputLabelProps={!icon ? { shrink: true } : null}
+      />
+    </Grid>
+  );
+}
 
 export default Location;
