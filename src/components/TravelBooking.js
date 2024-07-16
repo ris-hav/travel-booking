@@ -112,7 +112,7 @@ const TravelBooking = () => {
                   color: "green",
                 }}
               >
-                Add Another Route
+                Add Loyalty Cards
               </Button>
             </Grid>
           </Grid>
