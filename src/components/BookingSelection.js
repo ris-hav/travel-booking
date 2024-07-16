@@ -3,11 +3,11 @@ import { Grid, Box, Button } from "@mui/material";
 
 import {
   Flight as FlightIcon,
-  Hotel as HotelIcon,
-  Train as TrainIcon,
-  DirectionsBus as BusIcon,
-  TimeToLeave as TimeToLeaveIcon,
-  Chat as ChatIcon,
+  TrainOutlined as TrainIcon,
+  DirectionsBusFilledOutlined as BusIcon,
+  LocalHotelOutlined as HotelIcon,
+  DirectionsCarFilledOutlined as TimeToLeaveIcon,
+  ChatOutlined as ChatIcon,
 } from "@mui/icons-material";
 
 import styled from "styled-components";
