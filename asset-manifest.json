@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/travel-booking/static/css/main.59b460c5.css",
+    "main.js": "/travel-booking/static/js/main.34ea1ae7.js",
+    "index.html": "/travel-booking/index.html",
+    "main.59b460c5.css.map": "/travel-booking/static/css/main.59b460c5.css.map",
+    "main.34ea1ae7.js.map": "/travel-booking/static/js/main.34ea1ae7.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.59b460c5.css",
+    "static/js/main.34ea1ae7.js"
+  ]
+}
