@@ -142,7 +142,11 @@ const Item = ({ trip }) => {
             {trip.price}
           </Typography>
         </Box>
-        <Button variant="contained" color="primary" sx={{ marginLeft: "16px" }}>
+        <Button
+          variant="contained"
+          color="primary"
+          sx={{ marginLeft: "16px", textTransform: "none" }}
+        >
           Select Tickets
         </Button>
       </Box>
