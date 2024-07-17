@@ -8,7 +8,7 @@ const Categories = ({ value, onChange, noOfTabs }) => {
           <Tab key={i} label={el} />
         ))}
       </Tabs>
-      <Divider sx={{ my: 4, margin: 0 }} />
+      <Divider sx={{ my: 4, margin: "-2px", borderBottomWidth: 2 }} />
     </>
   );
 };

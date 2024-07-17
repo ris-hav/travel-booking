@@ -31,7 +31,7 @@ const Location = () => {
         icon={<AddLocationAltIcon />}
       />
       <FlightDetails label="Departure Date" type="date" md={2} />
-      <FlightDetails label="Departure Time" type="time" md={2} />
+      <FlightDetails label="Time" type="time" md={2} />
     </Grid>
   );
 };
